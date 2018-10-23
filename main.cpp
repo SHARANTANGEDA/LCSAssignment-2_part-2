@@ -10,8 +10,9 @@
 using namespace std;
 
 int main() {
-    int n;
+    static int n;
     cin>>n;
+
     vector <string> vec;
     for(int i=0;i<n;i++) {
         string s;
@@ -21,14 +22,18 @@ int main() {
 
     vector <string> :: iterator it;
     int slashcount[n];
+
+    string statement[n];
     string rule[n];
     string linesUsedByRule[n];
+
     int line[n];
     int flag=0;
+
     int verify=0;
 
 
-    for(int i=0;i<n;i++) {
+    for(int i=0;i<vec.size();i++) {
 
         slashcount[i] = count(vec[i].begin(), vec[i].end(), '/');
         unsigned first = vec[i].find_first_of('/');
@@ -45,22 +50,23 @@ int main() {
         }
     }
 
-
+    for(int i=0;i<vec.size();i++) {
+        unsigned first = vec[i].find_first_of('/');
+        statement[i] = vec[i].substr(0, first);
+    }
 
     for(int i=0;i<vec.size();i++) {
 
-        unsigned first = vec[i].find_first_of('/');
-        string statement;
-        statement = vec[i].substr(0, first);
 
-        PremiseChecker pr(statement,rule[i]);
+
+        PremiseChecker pr(statement[i],rule[i]);
         if(pr.check()) {
             line[i]=1;
         }
 
-        if(linesUsedByRule[i].length()==3){
-            AndIntro andIn(statement,rule[i],linesUsedByRule[i],slashcount[i]);
-            if(andIn.check()) {
+        if((linesUsedByRule[i].length()==3) && (rule[i]=="^i"){
+            AndIntro andIn(linesUsedByRule[i],i);
+            if(andIn.check(statement)) {
                 line[i]=1;
             }
         }
@@ -69,12 +75,12 @@ int main() {
 
 
 
-    if(flag==0) {
-        cout<<"Valid Proof"<<endl;
-    } else {
-        cout<<"Invalid Proof"<<endl;
-
-    }
+//    if(flag==0) {
+//        cout<<"Valid Proof"<<endl;
+//    } else {
+//        cout<<"Invalid Proof"<<endl;
+//
+//    }
 
 
     return 0;

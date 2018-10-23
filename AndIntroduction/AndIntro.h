@@ -11,15 +11,18 @@ using namespace std;
 
 class AndIntro {
 
-    string statement;
+
     string rule;
     int slash;
     int linesused[2];
+    int iteration;
 
 
 public:
-    AndIntro(string s,string r,string param, int sl);
-    bool check();
+
+    AndIntro(string param,int i);
+
+    bool check(string s[]);
 };
 
 

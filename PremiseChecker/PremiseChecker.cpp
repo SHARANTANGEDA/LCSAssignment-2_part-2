@@ -14,6 +14,6 @@ bool PremiseChecker::check() {
     char ch=rule[0];
     string str=premise;
 
-    return (ch == 'p');
+    return (ch == 'P');
 
 }
