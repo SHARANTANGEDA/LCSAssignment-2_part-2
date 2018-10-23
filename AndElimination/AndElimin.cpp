@@ -24,9 +24,9 @@ AndElimin::AndElimin(string r, string lu, int i) {
 }
 
 bool AndElimin::check(string s[]) {
-    stringstream str;
+//    stringstream str;
 
-    //******In And Statement
+    //******In And Statement***************************************
     int len=s[linesUsed-1].length();
     char arr[len+1];
 //    cout<<"premise: "<<s[linesUsed-1]<<endl;
@@ -41,10 +41,10 @@ bool AndElimin::check(string s[]) {
     TreeInfix treeInfix1(parseTree,num);
     string output=treeInfix1.getInfix();
 
-    //******
+    //*************************************************************
 
 
-    //After Elimination******
+    //After Elimination********************************************
     int len2=s[iteration].length();
     char arr2[len2+1];
     strcpy(arr2,s[iteration].c_str());
@@ -59,7 +59,7 @@ bool AndElimin::check(string s[]) {
 
     TreeInfix treeInfix2(parseTree2,0);
     string output2=treeInfix2.getInfix();
-    //*******
+    //**************************************************************
 
 //    cout<<"1: "<<output<<"  2: "<<output2<<endl;
     int x=output.compare(output2);

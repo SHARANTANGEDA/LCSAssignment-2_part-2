@@ -4,7 +4,7 @@
 #include "PremiseChecker/PremiseChecker.h"
 #include "AndElimination/AndElimin.h"
 #include "AndIntroduction/AndIntro.h"
-#include "ImplicationElimination/ImplicIntro.h"
+#include "ImplicationElimination/ImplicElimin.h"
 #include "OrIntroduction/OrIntro.h"
 
 using namespace std;
@@ -78,6 +78,18 @@ int main() {
         else if ((rule[i]=="^e1") || (rule[i]=="^e2")) {
             AndElimin andEl(rule[i],linesUsedByRule[i],i);
             if (andEl.check(statement)) {
+                line[i]=1;
+            }
+        }
+        else if((rule[i]=="Vi1") || (rule[i]=="Vi2")) {
+            OrIntro orIn(rule[i],linesUsedByRule[i],i);
+            if(orIn.check(statement)) {
+                line[i]=1;
+            }
+        }
+        else if(rule[i]==">e") {
+            ImplicElimin implicEl(linesUsedByRule[i],i);
+            if(implicEl.check(statement)) {
                 line[i]=1;
             }
         }

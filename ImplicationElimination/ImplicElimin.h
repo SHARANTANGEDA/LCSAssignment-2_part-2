@@ -2,31 +2,22 @@
 // Created by sharan on 22/10/18.
 //
 
-#ifndef ASSP2_ANDINTRO_H
-#define ASSP2_ANDINTRO_H
+#ifndef ASSP2_IMPLICELIMIN_H
+#define ASSP2_IMPLICELIMIN_H
 
 #include <string>
-
-
-
 using namespace std;
 
 
-class AndIntro {
-
-
-    string rule;
-    int slash;
+class ImplicElimin {
     int linesused[2];
     int iteration;
 
 
 public:
-
-    AndIntro(string param,int i);
-
+    ImplicElimin(string lu,int i);
     bool check(string s[]);
 };
 
 
-#endif //ASSP2_ANDINTRO_H
+#endif //ASSP2_IMPLICELIMIN_H
