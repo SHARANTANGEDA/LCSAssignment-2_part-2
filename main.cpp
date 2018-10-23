@@ -45,12 +45,6 @@ int main() {
         }
     }
 
-//            if(slashcount[i]==0) {
-//            rule[i]="I";
-//            cout<<"Invalid Proof"<<endl;
-//            return 0;
-
-
 
 
     for(int i=0;i<vec.size();i++) {
@@ -64,22 +58,13 @@ int main() {
             line[i]=1;
         }
 
-        AndIntro andIn(statement,rule[i],linesUsedByRule[i],slashcount[i]);
+        if(linesUsedByRule[i].length()==3){
+            AndIntro andIn(statement,rule[i],linesUsedByRule[i],slashcount[i]);
+            if(andIn.check()) {
+                line[i]=1;
+            }
+        }
 
-
-
-//        if(rule[i]=="P") {
-//
-//            PremiseChecker pr(premise,rule[i]);
-//            if (!pr.check()) {
-//                flag++;
-//            }
-//        }
-//        else if(rule[i]=="^i") {
-//            string andIntro;
-//            andIntro=vec[i].substr(0,first);
-//
-//        }
     }
 
 
