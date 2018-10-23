@@ -29,21 +29,17 @@ bool AndElimin::check(string s[]) {
     //******In And Statement
     int len=s[linesUsed-1].length();
     char arr[len+1];
-    cout<<"premise: "<<s[linesUsed-1]<<endl;
+//    cout<<"premise: "<<s[linesUsed-1]<<endl;
     strcpy(arr,s[linesUsed-1].c_str());
-    cout<<__LINE__<<endl;
 
     InfixPostfix infixPostfix1(len,arr);
     string postfix=infixPostfix1.getPostFix();
-    cout<<__LINE__<<endl;
 
-    PostfixParseTree postfixParseTree1(len,postfix);
+    PostfixParseTree postfixParseTree1(postfix.length(),postfix);
     Node* parseTree=postfixParseTree1.getTree();
-    cout<<__LINE__<<endl;
 
     TreeInfix treeInfix1(parseTree,num);
     string output=treeInfix1.getInfix();
-    cout<<__LINE__<<endl;
 
     //******
 
@@ -52,18 +48,20 @@ bool AndElimin::check(string s[]) {
     int len2=s[iteration].length();
     char arr2[len2+1];
     strcpy(arr2,s[iteration].c_str());
-    cout<<"COnc: "<<s[iteration]<<endl;
+//    cout<<"Conc: "<<s[iteration]<<endl;
 
     InfixPostfix infixPostfix2(len2,arr2);
     string postfix2=infixPostfix2.getPostFix();
 
-    PostfixParseTree postfixParseTree2(len2,postfix2);
+    PostfixParseTree postfixParseTree2(postfix2.length(),postfix2);
     Node* parseTree2=postfixParseTree2.getTree();
+
 
     TreeInfix treeInfix2(parseTree2,0);
     string output2=treeInfix2.getInfix();
     //*******
-    cout<<"1: "<<output<<"  2: "<<output2<<endl;
+
+//    cout<<"1: "<<output<<"  2: "<<output2<<endl;
     int x=output.compare(output2);
 
     return x==0;

@@ -38,7 +38,7 @@ PostfixParseTree ::PostfixParseTree(int len, string s) {
             root->right = NULL;
             stack1.push(root);
         }
-        else {
+        else if(isSymbol(arr[i])){
 
             root=newBranch(arr[i]);
 
@@ -66,9 +66,12 @@ PostfixParseTree ::PostfixParseTree(int len, string s) {
 }
 
 
+bool PostfixParseTree ::isSymbol(char a) {
+    return ((a == 'V') || (a == '^') || (a == '>'));
+}
 
 
-Node* PostfixParseTree::newBranch(char store) {
+    Node* PostfixParseTree::newBranch(char store) {
     Node* temp=new Node;
     temp->left=NULL;
     temp->right=NULL;

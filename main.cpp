@@ -12,11 +12,14 @@ using namespace std;
 int main() {
     static int n;
     cin>>n;
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
 
     vector <string> vec;
     for(int i=0;i<n;i++) {
         string s;
         cin>>s;
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');
         vec.push_back(s);
     }
 

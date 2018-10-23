@@ -25,6 +25,7 @@ public:
 
     Node* newBranch(char store);
     Node* getTree();
+    bool  isSymbol(char a);
 
 };
 
