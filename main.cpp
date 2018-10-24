@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <chrono>
+#include <unistd.h>
 #include "PremiseChecker/PremiseChecker.h"
 #include "AndElimination/AndElimin.h"
 #include "AndIntroduction/AndIntro.h"
@@ -9,8 +11,11 @@
 #include "ModusTollens/ModusTollens.h"
 
 using namespace std;
+using namespace std::chrono;
+
 
 int main() {
+
     static int n;
     cin>>n;
     cin.ignore(numeric_limits<streamsize>::max(),'\n');
@@ -24,8 +29,10 @@ int main() {
         vec.push_back(s);
     }
 
-    vector <string> :: iterator it;
-    int slashcount[n];
+    auto start=high_resolution_clock::now();
+
+
+    int slashCount[n];
 
     string statement[n];
     string rule[n];
@@ -41,16 +48,16 @@ int main() {
 
     for(int i=0;i<vec.size();i++) {
 
-        slashcount[i] = count(vec[i].begin(), vec[i].end(), '/');
+        slashCount[i] = count(vec[i].begin(), vec[i].end(), '/');
         unsigned first = vec[i].find_first_of('/');
 
 
-        if (slashcount[i] > 1) {
+        if (slashCount[i] > 1) {
             unsigned next = vec[i].find("/", first+1);
             int ruleLength=next-first-1;
             rule[i] = vec[i].substr(first+1, ruleLength);
             linesUsedByRule[i] = vec[i].substr(next+1, vec[i].length());
-        } else if (slashcount[i] == 1) {
+        } else if (slashCount[i] == 1) {
             rule[i] = vec[i].substr(first+1, vec[i].length());
         } else {
             cout << "Invalid Proof" << endl;
@@ -77,6 +84,7 @@ int main() {
             }
         }
         else if ((rule[i]=="^e1") || (rule[i]=="^e2")) {
+//            cout<<"Main: "<<__LINE__;
             AndElimin andEl(rule[i],linesUsedByRule[i],i);
             if (andEl.check(statement)) {
                 line[i]=1;
@@ -110,12 +118,18 @@ int main() {
     }
 
 
+
     if(flag==0) {
         cout<<"Valid Proof"<<endl;
     } else {
         cout<<"Invalid Proof"<<endl;
 
     }
+
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Run Time is " << duration.count() << " microseconds" << endl;
 
 
     return 0;

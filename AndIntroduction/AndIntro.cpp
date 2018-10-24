@@ -32,7 +32,6 @@ bool AndIntro::check(string s[]) {
     stringstream checker;
     checker<<"(";
     checker<<s[linesused[0]-1];
-    cout<<linesused[0]<<endl;
     checker<<"^";
     checker<<s[linesused[1]-1];
     checker<<")";
