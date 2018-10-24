@@ -14,9 +14,6 @@ using namespace std;
 
 class AndIntro {
 
-
-    string rule;
-    int slash;
     int linesused[2];
     int iteration;
 

@@ -6,6 +6,7 @@
 #include "AndIntroduction/AndIntro.h"
 #include "ImplicationElimination/ImplicElimin.h"
 #include "OrIntroduction/OrIntro.h"
+#include "ModusTollens/ModusTollens.h"
 
 using namespace std;
 
@@ -90,6 +91,12 @@ int main() {
         else if(rule[i]==">e") {
             ImplicElimin implicEl(linesUsedByRule[i],i);
             if(implicEl.check(statement)) {
+                line[i]=1;
+            }
+        }
+        else if(rule[i]=="MT") {
+            ModusTollens modusTollens(linesUsedByRule[i],i);
+            if(modusTollens.check(statement)) {
                 line[i]=1;
             }
         }
