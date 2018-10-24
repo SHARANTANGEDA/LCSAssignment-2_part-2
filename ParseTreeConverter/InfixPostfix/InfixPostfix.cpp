@@ -54,7 +54,6 @@ InfixPostfix::InfixPostfix(int len, char arr[]) {
     string print = post.str();
     postfix=print;
 
-    cout << print << endl;
 }
 
 int InfixPostfix::precedence(char a) {

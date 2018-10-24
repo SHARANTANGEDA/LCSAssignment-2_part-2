@@ -25,7 +25,6 @@ ImplicElimin::ImplicElimin(string lu, int i) {
     linesused[0]=stoi(phelp[0]);
     linesused[1]=stoi(phelp[1]);
 
-    cout<<linesused[0]<<"   "<<linesused[1]<<endl;
 
     iteration=i;
 }
@@ -44,10 +43,10 @@ bool ImplicElimin::check(string s[]) {
     Node* parseTree=postfixParseTreeImpl.getTree();
 
     TreeInfix treeInfixleft(parseTree,1);
-    string impleft=treeInfixleft.getInfix();
+    string impLeft=treeInfixleft.getInfix();
 
     TreeInfix treeInfixright(parseTree,2);
-    string impright=treeInfixright.getInfix();
+    string impRight=treeInfixright.getInfix();
     //****************************************************************
 
 
@@ -57,17 +56,17 @@ bool ImplicElimin::check(string s[]) {
     strcpy(pArr,s[linesused[1]-1].c_str());
 
     InfixPostfix infixPostfixP(lplength,pArr);
-    string postfix1=infixPostfixP.getPostFix();
+    string postfixP=infixPostfixP.getPostFix();
 
-    PostfixParseTree postfixParseTreeP(postfix1.length(),postfix1);
-    Node* parseTree1=postfixParseTreeP.getTree();
+    PostfixParseTree postfixParseTreeP(postfixP.length(),postfixP);
+    Node* parseTreeP=postfixParseTreeP.getTree();
 
-    TreeInfix treeInfixP(parseTree1,0);
+    TreeInfix treeInfixP(parseTreeP,0);
     string pLeft=treeInfixP.getInfix();
     //****************************************************************
 
 
-    //**********************left part's premise version***************
+    //**********************final result version*********************
     int reslength=s[iteration].length();
     char resArr[reslength+1];
     strcpy(resArr,s[iteration].c_str());
@@ -79,11 +78,12 @@ bool ImplicElimin::check(string s[]) {
     Node* parseTreeRes=postfixParseTreeRes.getTree();
 
     TreeInfix treeInfixRes(parseTreeRes,0);
-    string res=treeInfixP.getInfix();
+    string res=treeInfixRes.getInfix();
     //****************************************************************
 
-    int c1=impleft.compare(pLeft);
-    int c2=impright.compare(res);
+
+    int c1=impLeft.compare(pLeft);
+    int c2=impRight.compare(res);
 
     return ((c1 == 0) && (c2 == 0));
 

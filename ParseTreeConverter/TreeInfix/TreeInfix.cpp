@@ -8,24 +8,21 @@
 #include "TreeInfix.h"
 
 TreeInfix::TreeInfix(Node *tree,int val) {
-//    cout<<"TreeInfix :"<<__LINE__;
+
     if(val==1) {
-//        cout<<"TreeInfix :"<<__LINE__;
-
         Node *subTree=tree->right;
-
         traverseInOrder(subTree);
-    } else if(val==2) {
+    }
+    else if(val==2) {
         Node *subTree=tree->left;
 
-//        cout<<"TreeInfix :"<<__LINE__;
         traverseInOrder(subTree);
-    } else if(val==0) {
+    }
+    else if(val==0) {
         traverseInOrder(tree);
     }
 
     infix=store.str();
-//    cout<<infix<<" hello "<<val<<endl;
 }
 
 //Recursively traverses through parse tree InOrder
@@ -34,7 +31,6 @@ void TreeInfix::traverseInOrder(Node *tree) {
 
         traverseInOrder(tree->right);
         store<<tree->data;
-//        cout<<tree->data<<" hh"<<endl;
         traverseInOrder(tree->left);
     }
 
