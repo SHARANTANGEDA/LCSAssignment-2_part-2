@@ -99,10 +99,6 @@ bool ModusTollens::check(string s[]) {
     string afterNegimpRight=impRightNeg.str();
 
 
-    cout<<"AfterNegimpLeft: "<<afterNegimpLeft<<" AfterNegimpRight: "<<afterNegimpRight<<endl;
-    cout<<"pRight: "<<pRight<<" Res: "<<res<<endl;
-
-
 
     int c1=afterNegimpLeft.compare(res);
     int c2=afterNegimpRight.compare(pRight);
