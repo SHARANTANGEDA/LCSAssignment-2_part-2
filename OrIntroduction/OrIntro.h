@@ -7,15 +7,16 @@
 
 #include <string>
 using namespace std;
+//used to verify if or introduction which has been used can be properly verified 
 class OrIntro {
 
-    int iteration;
-    int num;
-    int linesUsed;
+    int iteration;///< an iterator 
+    int num;///< a method variable of int type
+    int linesUsed;///<the line used to prove or introduction
 
 public:
-    OrIntro(string r,string lu, int i);
-    bool check(string s[]);
+    OrIntro(string r,string lu, int i);///<constructor of class
+    bool check(string s[]);///<method of class that returns a Boolean value
 };
 
 

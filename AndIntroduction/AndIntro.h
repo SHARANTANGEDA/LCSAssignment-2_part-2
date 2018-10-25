@@ -11,18 +11,17 @@
 
 using namespace std;
 
-
+///used to check validity of and introduction proof rule.
 class AndIntro {
 
-    int linesused[2];
-    int iteration;
+    int linesused[2];///<method variable used to store lines used for applying proof rule variables used
+    int iteration;///<method variable used as an iterator
 
 
 public:
 
-    AndIntro(string param,int i);
-
-    bool check(string s[]);
+    AndIntro(string param,int i);///<constructor of class
+    bool check(string s[]);///<method of class that returns a Boolean value
 };
 
 

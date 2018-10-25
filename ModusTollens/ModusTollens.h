@@ -7,16 +7,16 @@
 
 #include <string>
 using namespace std;
-
+/// class used to check validity of modus tollens
 class ModusTollens {
 
-    int linesused[2];
-    int iteration;
+    int linesused[2];///<method variable used to store lines of proof which are used to justify use of modus tollens
+    int iteration;///<method variable used as an iterator 
 
 
 public:
-    ModusTollens(string param ,int i);
-    bool check(string s[]);
+    ModusTollens(string param ,int i);///<constructor of class
+    bool check(string s[]);///<method of class that returns Boolean value
 };
 
 

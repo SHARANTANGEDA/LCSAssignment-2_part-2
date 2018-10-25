@@ -7,7 +7,11 @@
 #include <algorithm>
 #include "AndIntro.h"
 using namespace std;
-
+/**
+ * @param param  is a string array that contains the lines of proof used by and introduction proof rule  
+ * @param i is an integer used to mention the line where and introduction is used
+ * it divides param into different integer values each with a distinct line used for proving an introduction. 
+*/
 AndIntro::AndIntro(string param ,int i) {
 
     int slashcount=count(param.begin(), param.end(), '/');
@@ -27,7 +31,11 @@ AndIntro::AndIntro(string param ,int i) {
 
 
 }
-
+/**
+ * @param s a string array that contains all the statements of proof 
+ * checks whether or not 'and introduction' proof rule was used correctly\n
+ * if it finds correct usage it returns true else it returns false 
+*/
 bool AndIntro::check(string s[]) {
     stringstream checker;
     checker<<"(";
