@@ -127,6 +127,7 @@ int main() {
     }
 
 
+
     //decide and declare if proof is valid or not
     if(flag==0) {
         cout<<"Valid Proof"<<endl;
