@@ -16,7 +16,7 @@ using namespace std;
 /**
  * @param r a string type parameter that represents the proof rule used 
  * @param lu a string type parameter that represents the lines used by the proof rule
- * @param i an integer that represents the iterator(which represents the line of proof that we are currently analyzing)
+ * @param i an integer that represents the iterator(which represents the line of proof that we are currently analyzing)\n
  * it converts  given input parameters lu and required part of r into integers and stores the values as method variables
 */
 AndElimin::AndElimin(string r, string lu, int i) {
@@ -28,7 +28,7 @@ AndElimin::AndElimin(string r, string lu, int i) {
 
 }
 /**
- * @param s  an array of string that represents the whole set of statements
+ * @param s  an array of string that represents the whole set of statements\n
  * checks whether used proof rule is properly justified or not\n
  * returns true if proof rule is applied correctly, else it returns false 
 */

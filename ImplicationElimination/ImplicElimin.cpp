@@ -33,7 +33,7 @@ ImplicElimin::ImplicElimin(string lu, int i) {
     iteration=i;
 }
 /**
-  * @param s  an array of strings that represents the whole set of statements
+  * @param s  an array of strings that represents the whole set of statements\n
   * checks whether usage of implication elimination is correctly justified
   * if it is, it returns true, else, it  returns false  
 */

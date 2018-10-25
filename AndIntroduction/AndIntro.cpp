@@ -9,7 +9,7 @@
 using namespace std;
 /**
  * @param param  is a string array that contains the lines of proof used by and introduction proof rule  
- * @param i is an integer used to mention the line where and introduction is used
+ * @param i is an integer used to mention the line where and introduction is used\n
  * it divides param into different integer values each with a distinct line used for proving an introduction. 
 */
 AndIntro::AndIntro(string param ,int i) {

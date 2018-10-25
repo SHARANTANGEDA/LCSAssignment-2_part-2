@@ -10,7 +10,7 @@
 
 /**
  * @param r a string that represents the rule used
- * @param lu a string that mentions the lines of proof used for or introduction
+ * @param lu a string that mentions the lines of proof used for or introduction\n
  * the member variables are initialized 
 */
 OrIntro::OrIntro(string r, string lu, int i) {
@@ -21,7 +21,7 @@ OrIntro::OrIntro(string r, string lu, int i) {
     linesUsed = stoi(lu);
 }
 /**
-  * @param s  an array of strings that represents the whole set of statements
+  * @param s  an array of strings that represents the whole set of statements\n
   * checks whether usage of or introduction is correctly justified
   * if it is, it returns true, else, it  returns false  
 */

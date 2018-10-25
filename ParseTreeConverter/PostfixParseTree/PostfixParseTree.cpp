@@ -10,6 +10,7 @@
 using namespace std;
 
 /**
+ * 
  * we traverse through the string inputted.
  * And generate a binary tree(parse tree) whose root node is pointed to by a member variable.
  * note: to get binary tree node pointer use getTree()

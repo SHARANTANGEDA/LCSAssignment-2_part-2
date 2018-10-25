@@ -33,7 +33,7 @@ ModusTollens::ModusTollens(string param, int i) {
     iteration=i;
 }
 /**
-  * @param s  an array of strings that represents the whole set of statements
+  * @param s  an array of strings that represents the whole set of statements\n
   * checks whether usage of modus tollens was justified or not.
   * if justified, then it returns true , else it returns false
 */
