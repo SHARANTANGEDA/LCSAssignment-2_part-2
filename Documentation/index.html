@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Logic in Computer Science Assignment Part-2: Main Page</title>
+<title>My Project: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,8 +86,59 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Logic in Computer Science Assignment Part-2 Documentation</div>  </div>
+<div class="title">Documentation</div>  </div>
 </div><!--header-->
+
+
+    <div class="groupHeader" style="color: #3D0B6F">
+        <h1>Project Description</h1>
+    </div>
+
+    <div class="groupHeader" style="color: #3D0B6F">
+        <h2>    Aim</h2>
+    </div>
+    <div class="groupText" align="left">
+        <p>	To create a tool for verifying whether a certain proof of a given sequent is valid or not</p>
+    </div>
+
+    <div class="groupHeader" style="color: #3D0B6F">
+        <h2>Assumptions Made</h2>
+    </div>
+    <div class="groupText" align="left">
+        <p>1.Each propositional formula should begin and end with parenthesis</p>
+        <h3> examples: </h3>
+        <p>(i) (a^b) is valid</p>
+        <p>(ii) a^b is invalid</p>
+        <p>(iii) ((a^b)^(c^d)) is valid</p>
+        <p>(iv)  (a^b)^(c^d)  is invalid</p>
+        <p> </p>
+        <p>2.In case of negation or multiple negations to a literal/formula, each negation is enclosed within set of parenthesis.</p>
+        <h3>examples:</h3>
+        <p>(i) ~p is invalid</p>
+        <p>(ii) (~p) is valid</p>
+        <p>(iii) (~(~p)) is valid</p>
+        <p>(iv) (~~p) is invalid</p>
+    </div>
+
+    <div class="groupHeader" style="color: #3D0B6F">
+        <h2>Procedure</h2>
+    </div>
+    <div class="groupText" align="left">
+        <p>1.Each line of proof of the given sequent is sorted into propositional formula, proof rule and line numbers of proof used to prove the propositional formula.</p>
+        <p>2.We then validate propositional formula by passing it to it's proof rule's method..</p>
+        <p>3.Step-2 is repeated for all the lines of proof.</p>
+        <p>4.If all lines are valid than the proof is considered valid.</p>
+
+    </div>
+    <div class="groupHeader" style="color: #3D0B6F">
+        <h2>Observations</h2>
+    </div>
+    <div class="groupText" align="left">
+        <p>click <a href="Test_Case-1.html">here</a> to access the test cases</p>
+    </div>
+
+
+
 <div class="contents">
 </div><!-- contents -->
 </div><!-- doc-content -->
