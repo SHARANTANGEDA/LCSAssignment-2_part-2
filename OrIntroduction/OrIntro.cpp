@@ -8,7 +8,11 @@
 #include "../ParseTreeConverter/PostfixParseTree/PostfixParseTree.h"
 #include "../ParseTreeConverter/TreeInfix/TreeInfix.h"
 
-
+/**
+ * @param r a string that represents the rule used
+ * @param lu a string that mentions the lines of proof used for or introduction
+ * the member variables are initialized 
+*/
 OrIntro::OrIntro(string r, string lu, int i) {
     string last = r.substr(2, 1);
     iteration = i;
@@ -16,13 +20,17 @@ OrIntro::OrIntro(string r, string lu, int i) {
     num = a;
     linesUsed = stoi(lu);
 }
-
+/**
+  * @param s  an array of strings that represents the whole set of statements
+  * checks whether usage of or introduction is correctly justified
+  * if it is, it returns true, else, it  returns false  
+*/
 bool OrIntro::check(string s[]) {
 
     //******In premise Statement***********************************
     int len=s[linesUsed-1].length();
     char arr[len+1];
-//    cout<<"premise: "<<s[linesUsed-1]<<endl;
+
     strcpy(arr,s[linesUsed-1].c_str());
 
     InfixPostfix infixPostfix1(len,arr);
@@ -40,7 +48,7 @@ bool OrIntro::check(string s[]) {
     int len2=s[iteration].length();
     char arr2[len2+1];
     strcpy(arr2,s[iteration].c_str());
-//    cout<<"Conc: "<<s[iteration]<<endl;
+
 
     InfixPostfix infixPostfix2(len2,arr2);
     string postfix2=infixPostfix2.getPostFix();
