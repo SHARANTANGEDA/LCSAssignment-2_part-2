@@ -10,15 +10,18 @@
 
 #include <string>
 #include <sstream>
-
+///a class named TreeInfix
+/**
+ * this class contains methods and variables used to traverse a parse tree
+ *  and represent it as an infix formula
+*/
 class TreeInfix {
-    string infix;
-    stringstream store;
+    string infix;  ///<member variable that contains final infix representation of tree
+    stringstream store;///< member variable that is used to store intermediate(incomplete) values of infix representation of tree
 public:
-    TreeInfix(Node *tree,int val);
-    string getInfix();
-
-    void traverseInOrder(Node *tree);
+    TreeInfix(Node *tree,int val);///<constructor of class
+    string getInfix();///<method of class that returns a string
+    void traverseInOrder(Node *tree);///<method of class that returns void
 };
 
 

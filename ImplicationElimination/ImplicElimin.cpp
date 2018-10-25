@@ -9,7 +9,11 @@
 #include "../ParseTreeConverter/InfixPostfix/InfixPostfix.h"
 #include "../ParseTreeConverter/PostfixParseTree/PostfixParseTree.h"
 #include "../ParseTreeConverter/TreeInfix/TreeInfix.h"
-
+/**
+ * @param lu  a string that contains lines used for proving implication elimination
+ * @param i  an int that represents line on which implication elimination is mentioned
+ * initializes member variables by passing on modified input parameters to them
+*/
 ImplicElimin::ImplicElimin(string lu, int i) {
     int slashcount=count(lu.begin(), lu.end(), '/');
     unsigned first = lu.find_first_of('/');
@@ -28,7 +32,11 @@ ImplicElimin::ImplicElimin(string lu, int i) {
 
     iteration=i;
 }
-
+/**
+  * @param s  an array of strings that represents the whole set of statements
+  * checks whether usage of implication elimination is correctly justified
+  * if it is, it returns true, else, it  returns false  
+*/
 bool ImplicElimin::check(string s[]) {
 
     //**************implies segregation****************************

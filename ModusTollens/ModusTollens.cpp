@@ -11,7 +11,11 @@
 #include "../ParseTreeConverter/PostfixParseTree/PostfixParseTree.h"
 #include "../ParseTreeConverter/TreeInfix/TreeInfix.h"
 
-
+/**
+ * @param param  is a string array that contains the lines of proof used by modus tollens proof rule  
+ * @param i is an integer used to mention the line where and introduction is used
+ * it divides param into different integer values each with a distinct line used for proving an introduction. 
+*/
 ModusTollens::ModusTollens(string param, int i) {
     int slashcount=count(param.begin(), param.end(), '/');
     unsigned first = param.find_first_of('/');
@@ -28,7 +32,11 @@ ModusTollens::ModusTollens(string param, int i) {
 
     iteration=i;
 }
-
+/**
+  * @param s  an array of strings that represents the whole set of statements
+  * checks whether usage of modus tollens was justified or not.
+  * if justified, then it returns true , else it returns false
+*/
 bool ModusTollens::check(string s[]) {
     //**************implies segregation****************************
     int implength=s[linesused[0]-1].length();

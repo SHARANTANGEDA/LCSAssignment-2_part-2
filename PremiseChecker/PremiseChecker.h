@@ -10,11 +10,11 @@ using namespace std;
 
 class PremiseChecker {
 
-    string premise;
-    string rule;
+    string premise;///<member variable that stores premise 
+    string rule;/// member variable that stores the rule of given line of statement
 public:
-    PremiseChecker(string s,string r);
-    bool check();
+    PremiseChecker(string s,string r);/// constructor of class
+    bool check();/// method of class that returns Boolean value
 };
 
 
