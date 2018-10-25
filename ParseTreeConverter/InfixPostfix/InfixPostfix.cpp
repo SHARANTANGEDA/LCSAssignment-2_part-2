@@ -12,7 +12,7 @@ using namespace std;
 
 /**
  * @param len - integer representing length of second input parameter of constructor (a character string)
- * @param arr  - a character array that represents 
+ * @param arr  - a character array that represents a logic formula
 */
 InfixPostfix::InfixPostfix(int len, char arr[]) 
 {
