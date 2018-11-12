@@ -60,4 +60,7 @@ bool OrIntro::check(string s[]) {
     TreeInfix treeInfix2(parseTree2,num);
     string output2=treeInfix2.getInfix();
     //**************************************************************
+    int x=output.compare(output2);
+
+    return x==0;
 }
